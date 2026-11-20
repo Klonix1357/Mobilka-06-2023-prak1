@@ -13,7 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,6 +27,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="75dp"
                 android:orientation="vertical">
 
                 <FrameLayout
@@ -35,44 +39,59 @@
                         android:id="@+id/radioGroup"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="20dp">
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/group_border"
+                        android:checkedButton="@id/pocztowka_radioButton"
+                        android:paddingStart="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="15dp">
 
                         <RadioButton
                             android:id="@+id/pocztowka_radioButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="35dp"
                             android:checked="true"
-                            android:text="Pocztówka" />
+                            android:text="Pocztówka"
+                            app:buttonTint="#57b7d0"
+                            app:rippleColor="#30b8f4" />
 
                         <RadioButton
                             android:id="@+id/list_radioButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="List" />
+                            android:layout_height="35dp"
+                            android:text="List"
+                            app:buttonTint="#57b7d0"
+                            app:rippleColor="#30b8f4" />
 
                         <RadioButton
                             android:id="@+id/paczka_radioButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Paczka" />
+                            android:layout_height="35dp"
+                            android:text="Paczka"
+                            app:buttonTint="#57b7d0"
+                            app:rippleColor="#30b8f4" />
                     </RadioGroup>
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/typeLabel_textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rodzaj przesyłki" />
+                        android:layout_marginStart="15dp"
+                        android:background="#FFFFFF"
+                        android:text="Rodzaj przesyłki " />
 
                 </FrameLayout>
 
                 <Button
                     android:id="@+id/check_button"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="#e8e8e8"
                     android:text="Sprawdź Cenę"
                     android:textColor="#000000"
                     app:cornerRadius="5dp"
+                    app:rippleColor="#30b8f4"
                     app:strokeColor="#707070"
                     app:strokeWidth="2dp" />
             </LinearLayout>
@@ -98,6 +117,8 @@
                     android:id="@+id/price_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
                     android:text="Cena: 1,5 zł"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -110,57 +131,89 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dane adresowe" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/group_border"
                 android:orientation="vertical"
-                android:paddingTop="20dp">
+                android:paddingStart="20dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="30dp">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/streetLabel_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
                     android:text="Ulica z numerem" />
 
                 <EditText
                     android:id="@+id/street_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_text_border"
                     android:ems="10"
                     android:inputType="text" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/cityCodeLabel_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
                     android:text="Kod pocztowy" />
 
-                <EditText
-                    android:id="@+id/cityCode_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/cityCode_editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_border"
+                        android:ems="10"
+                        android:inputType="text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2" />
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/cityLabel_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
                     android:text="Miasto" />
 
                 <EditText
                     android:id="@+id/city_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_text_border"
                     android:ems="10"
                     android:inputType="text" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/addressLabel_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="#FFFFFF"
+                android:text="Dane adresowe" />
+
         </FrameLayout>
 
     </LinearLayout>
@@ -168,11 +221,14 @@
     <Button
         android:id="@+id/confirm_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:backgroundTint="#e8e8e8"
         android:text="Zatwierdź"
         android:textColor="#000000"
         app:cornerRadius="5dp"
+        app:rippleColor="#30b8f4"
         app:strokeColor="#707070"
         app:strokeWidth="2dp"
         tools:layout_editor_absoluteX="326dp"
